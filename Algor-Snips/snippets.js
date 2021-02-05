@@ -6,12 +6,10 @@ const alphabetPosition = (text) => {
     "t", "u", "v", "w", "x", "y", "z",];
   return text
     .toLowerCase()
-    .replace(/[^A-Za-z0-9]/g, "")
+    .replace(/[^A-Za-z]/g, "")
     .split("")
     .map(el => {
       return alpha.indexOf(el) + 1;
     })
     .join(" ");
 };
-
-console.log(alphabetPosition('Hello World!'));
