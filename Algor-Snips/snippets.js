@@ -13,3 +13,30 @@ const alphabetPosition = (text) => {
     })
     .join(" ");
 };
+
+// function to return "expanded form" of a number
+// expandedForm(123) = "100 + 20 + 3"
+function expandedForm(num) {
+  return num
+    .toString()
+    .split('')
+    .reverse()
+    .map((strNum, index) => {
+    return (strNum + "0".repeat(index)).toString();
+  })
+    .reverse()
+    .filter(el => el !== undefined && el > 0)
+    .join(' + ');
+}
+
+// return factorial of number
+// if above 12 || under 0 throw range error
+// if 0 return 1
+const factorial = n => {
+  if(n === 0) { return 1; }
+  if(n > 12 || n < 0) { throw new RangeError(); }
+  return [...Array(n+1).keys()]
+    .filter(el => el !== 0)
+    .reverse()
+    .reduce((a,b) => a*b);
+}
