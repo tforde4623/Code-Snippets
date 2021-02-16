@@ -40,3 +40,11 @@ const factorial = n => {
     .reverse()
     .reduce((a,b) => a*b);
 }
+
+// reverse each word in a string, not the entire string, keep spaces
+// ex. "hello world" => "olleh dlrow"
+function reverseWords(str) {
+  return str.split(' ').map(word => {
+    return word.split('').reverse().join('');
+  }).join(' ');
+}
